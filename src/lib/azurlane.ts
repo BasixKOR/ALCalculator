@@ -6,8 +6,8 @@ export default class AzurLaneCalculator {
   constructor(public level: number, public server: Server = Server.EN) {
   }
 
-  private calculateModifier(girls: GirlsCount): Modifier {
-    switch(girls) {
+  private calculateModifier(ships: ShipsCount): Modifier {
+    switch(ships) {
       case 1: return 1.0
       case 2: return 0.9
       case 3: return 0.8
@@ -21,11 +21,11 @@ export default class AzurLaneCalculator {
    * 
    * @param comfort 
    * @param foodbuff 
-   * @param girls 
+   * @param ships 
    * @param noSupplies 
    */
-  calculateTrainingExp(comfort: number, foodbuff: number, girls: GirlsCount, noSupplies: boolean = false): number {
-    let modifier: Modifier = this.calculateModifier(girls)
+  calculateTrainingExp(comfort: number, foodbuff: number, ships: ShipsCount, noSupplies: boolean = false): number {
+    let modifier: Modifier = this.calculateModifier(ships)
     let modifiedExpBase = 240 * modifier
     let modifiedLevelExp = this.level / 20 + 1
     let modifiedComfortExp = comfort / (comfort + 100) + 1
@@ -36,7 +36,7 @@ export default class AzurLaneCalculator {
 }
 
 // Type definitions for Azur Lane
-export type GirlsCount = 1 | 2 | 3 | 4 | 5
+export type ShipsCount = 1 | 2 | 3 | 4 | 5
 export type Modifier = 1.0 | 0.9 | 0.8 | 0.7 | 0.64
 
 // Export some utils
