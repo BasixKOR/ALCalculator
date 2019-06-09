@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Index from './pages/Index'
+import Menu from './pages/Menu'
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import AzurLaneCalculator, { AzurLaneContext } from './lib/azurlane'
+import styled from 'styled-components';
+
+const Header = styled.header`
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+`
 
 const App: React.FC = () => {
+  const [azurlane] = useState(new AzurLaneCalculator(NaN))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header className="header">
+          <h1>Azur Lane Calculator</h1>
+        </Header>
+        <AzurLaneContext.Provider value={azurlane}>
+          <Route path="/" exact component={Index} />
+          <Route path="/menu" component={Menu}></Route>
+        </AzurLaneContext.Provider>
+      </div>
+    </Router>
   );
 }
 
