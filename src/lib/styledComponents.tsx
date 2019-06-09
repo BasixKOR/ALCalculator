@@ -19,14 +19,11 @@ img {
 }
 `
 
-export const SubmitLink = styled(Link)`
-display: block;
+export const StyledLink = styled(Link)`
+width: 100%;
+background-color: ${({ color }) => color || 'dodgerblue'};
+padding: .3em;
+font-size: 1.3em;
 color: white;
 text-decoration: none;
-width: 100%;
-background-color: plum;
-padding: .3em;
-text-align: center;
-font-size: 1.3em;
-margin-top: auto;
 `

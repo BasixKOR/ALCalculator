@@ -1,7 +1,12 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AzurLaneContext, Server, isServer } from '../lib/azurlane';
-import { SubmitLink } from '../lib/styledComponents';
 import AkashiLayout from '../components/AkashiLayout';
+import styled from 'styled-components';
+import { StyledLink } from '../lib/styledComponents';
+
+export const SubmitLink = styled(StyledLink)`
+  text-align: center;
+`
 
 const Index: React.FC = props => {
   const azurlane = useContext(AzurLaneContext)
