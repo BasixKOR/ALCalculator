@@ -44,3 +44,6 @@ export const AzurLaneContext = React.createContext<AzurLaneCalculator>(new AzurL
 export function isServer(x: string): x is Server {
   return x in Server
 }
+export function isShipsCount(x: number): x is ShipsCount {
+  return x >= 1 && x <= 5
+}
