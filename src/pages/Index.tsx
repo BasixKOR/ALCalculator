@@ -1,8 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
-import akashi from '../res/akashi.png'
 import { AzurLaneContext, Server, isServer } from '../lib/azurlane';
-import { Flex, SubmitLink } from '../lib/styledComponents';
-import AkashiLayout from '../AkashiLayout';
+import { SubmitLink } from '../lib/styledComponents';
+import AkashiLayout from '../components/AkashiLayout';
 
 const Index: React.FC = props => {
   const azurlane = useContext(AzurLaneContext)

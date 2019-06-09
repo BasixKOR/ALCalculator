@@ -1,6 +1,6 @@
 import React from 'react';
-import akashi from './res/akashi.png'
-import { Flex } from './lib/styledComponents';
+import akashi from '../res/akashi.png'
+import { Flex } from '../lib/styledComponents';
 
 const AkashiLayout: React.FC = ({ children }) => (
   <Flex>
