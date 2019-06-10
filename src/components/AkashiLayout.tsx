@@ -1,9 +1,9 @@
 import React from 'react';
 import akashi from '../res/akashi.png'
 import { Flex } from '../lib/styledComponents';
-import { RouteChildrenProps } from 'react-router';
+import { RouteComponentProps, withRouter } from 'react-router';
 
-const AkashiLayout: React.FC<RouteChildrenProps> = ({ children, history }) => (
+const AkashiLayout: React.FC<RouteComponentProps> = ({ children, history }) => (
   <Flex>
     <img src={akashi} alt="Akashi" onClick={e => history.push('/')}/>
     <div className="content">
@@ -12,4 +12,4 @@ const AkashiLayout: React.FC<RouteChildrenProps> = ({ children, history }) => (
   </Flex>
 )
 
-export default AkashiLayout
+export default withRouter(AkashiLayout)

@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react";
 import { AzurLaneContext, isShipsCount } from "../../lib/azurlane";
 import AkashiLayout from "../../components/AkashiLayout";
-import CalcButton from "../../components/CalcButton";
-import { RouteChildrenProps } from "react-router";
+import CalcButton from "../../components/CalcButton"
 
-const Training: React.FC<RouteChildrenProps> = props => {
+const Training: React.FC = () => {
   const azurlane = useContext(AzurLaneContext)
   const [comfort, setComfort] = useState(NaN)
   const [buff, setBuff] = useState(NaN)
@@ -17,7 +16,7 @@ const Training: React.FC<RouteChildrenProps> = props => {
     setResult(azurlane.calculateTrainingExp(comfort, buff, ships, !enoughSupplies))
   }
 
-  return <AkashiLayout {...props}>
+  return <AkashiLayout>
     <p>Your level: {azurlane.level}, Your server: {azurlane.server}</p>
     <input type="number" value={comfort} onChange={e => setComfort(parseInt(e.target.value))} placeholder="Comfort" />
     <input type="number" value={buff} onChange={e => setBuff(parseInt(e.target.value))} placeholder="Food Buffs" />
@@ -27,7 +26,7 @@ const Training: React.FC<RouteChildrenProps> = props => {
       <label>Is the supplies enough?</label>
     </div>
     <h1>{result} EXP/hour</h1>
-    <CalcButton onClick={onClick} {...props} />
+    <CalcButton onClick={onClick} />
   </AkashiLayout>
 }
 

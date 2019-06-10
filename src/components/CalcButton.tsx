@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StyledButton } from '../lib/styledComponents';
-import { RouteChildrenProps } from 'react-router';
+import { RouteComponentProps, withRouter } from 'react-router';
 
 const FooterFlex = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const FooterFlex = styled.div`
   }
 `
 
-interface CalcButtonProps extends RouteChildrenProps {
+interface CalcButtonProps extends RouteComponentProps {
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
@@ -23,4 +23,4 @@ const CalcButton: React.FC<CalcButtonProps> = ({ onClick, history }) => {
   </FooterFlex>
 }
 
-export default CalcButton
+export default withRouter(CalcButton)
