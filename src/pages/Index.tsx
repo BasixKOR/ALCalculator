@@ -6,6 +6,7 @@ import { StyledLink } from '../lib/styledComponents';
 
 export const SubmitLink = styled(StyledLink)`
   text-align: center;
+  margin-top: auto;
 `
 
 const Index: React.FC = props => {
@@ -27,15 +28,15 @@ const Index: React.FC = props => {
   }
 
   return <AkashiLayout>
-    <p>냥! 아래에서 서버랑 지휘관의 레벨을 입력해라냥!</p>
-      <input name="level" type="number" value={level} onChange={levelHandler} placeholder="레벨" />
-      <select name="server" onChange={serverHandler}>
-        <option value="EN">English (Global)</option>
-        <option value="JP">Japanese</option>
-        <option value="CN">Chinese</option>
-        <option value="KR">Korean</option>
-      </select>
-      <SubmitLink to="/menu">시작</SubmitLink>
+    <p>Put your level and server, nya~</p>
+    <input name="level" type="number" value={level} onChange={levelHandler} placeholder="Level" />
+    <select name="server" onChange={serverHandler}>
+      <option value="EN">English (Global)</option>
+      <option value="JP">Japanese</option>
+      <option value="CN">Chinese</option>
+      <option value="KR">Korean</option>
+    </select>
+    <SubmitLink to="/menu">Start</SubmitLink>
   </AkashiLayout>
 }
 
