@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import Index from './pages/Index'
 import Menu from './pages/Menu'
+import Training from './pages/calculators/Training';
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import AzurLaneCalculator, { AzurLaneContext } from './lib/azurlane'
 import styled from 'styled-components';
-import Training from './components/calculators/Training';
+import ALRoute from './components/ALRoute';
 
 const Header = styled.header`
   background-color: #282c34;
@@ -27,8 +28,8 @@ const App: React.FC = () => {
         </Header>
         <AzurLaneContext.Provider value={azurlane}>
           <Route path="/" exact component={Index} />
-          <Route path="/menu" component={Menu} />
-          <Route path="/calc/training" component={Training} />
+          <ALRoute path="/menu" component={Menu} />
+          <ALRoute path="/calc/training" component={Training} />
         </AzurLaneContext.Provider>
       </div>
     </Router>
