@@ -1,9 +1,9 @@
-import React, { useContext, Component } from 'react'
+import React, { useContext } from 'react'
 import { AzurLaneContext } from '../lib/azurlane';
 import { Route, RouteChildrenProps, Redirect } from 'react-router';
 
-interface ALRouteInterface extends RouteChildrenProps  {
-  component: React.Component
+interface ALRouteInterface {
+  component: React.ComponentType
 }
 
 const ALRoute: React.FC<ALRouteInterface> = props => {
@@ -12,15 +12,13 @@ const ALRoute: React.FC<ALRouteInterface> = props => {
   return <Route render={ _ =>
     isNaN(azurlane.level) && azurlane.server === null ? 
     (
-      <Redirect
-        to={{
-          pathname: "/",
-          state: { from: props.location }
-        }}
-      />
+      <Redirect to={{
+        pathname: "/",
+        state: { from: _.location }
+      }} />
     ) : 
     (
-      <Component {..._} />
+      <props.component {..._} />
     )
   } />
 }
