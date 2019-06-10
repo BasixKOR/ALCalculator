@@ -3,13 +3,14 @@ import { AzurLaneContext, Server, isServer } from '../lib/azurlane';
 import AkashiLayout from '../components/AkashiLayout';
 import styled from 'styled-components';
 import { StyledLink } from '../lib/styledComponents';
+import { RouteChildrenProps } from 'react-router';
 
 export const SubmitLink = styled(StyledLink)`
   text-align: center;
   margin-top: auto;
 `
 
-const Index: React.FC = props => {
+const Index: React.FC<RouteChildrenProps> = props => {
   const azurlane = useContext(AzurLaneContext)
   const [level, setLevel] = useState(NaN)
   const [server, setServer] = useState<Server>(Server.EN)
@@ -27,7 +28,7 @@ const Index: React.FC = props => {
     if(isServer(event.target.value)) setServer(event.target.value)
   }
 
-  return <AkashiLayout>
+  return <AkashiLayout {...props}>
     <p>Put your level and server, nya~</p>
     <input name="level" type="number" value={level} onChange={levelHandler} placeholder="Level" />
     <select name="server" onChange={serverHandler}>

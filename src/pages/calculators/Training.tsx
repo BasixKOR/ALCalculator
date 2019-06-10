@@ -17,7 +17,7 @@ const Training: React.FC<RouteChildrenProps> = props => {
     setResult(azurlane.calculateTrainingExp(comfort, buff, ships, !enoughSupplies))
   }
 
-  return <AkashiLayout>
+  return <AkashiLayout {...props}>
     <p>Your level: {azurlane.level}, Your server: {azurlane.server}</p>
     <input type="number" value={comfort} onChange={e => setComfort(parseInt(e.target.value))} placeholder="Comfort" />
     <input type="number" value={buff} onChange={e => setBuff(parseInt(e.target.value))} placeholder="Food Buffs" />
