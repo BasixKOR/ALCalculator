@@ -33,6 +33,15 @@ export default class AzurLaneCalculator {
 
     return modifiedExpBase * modifiedLevelExp * modifiedComfortExp * noSuppliesOption
   }
+
+  /**
+   * 
+   * @param fleetOil Oil Usage for fleet
+   * @param mapExp Map EXP constant
+   */
+  calculateMeowficerExp(fleetOil: number, mapExp: number): number {
+    return 1 + fleetOil/4 + mapExp
+  }
 }
 
 // Type definitions for Azur Lane

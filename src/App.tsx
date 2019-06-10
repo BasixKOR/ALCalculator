@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Index from './pages/Index'
 import Menu from './pages/Menu'
 import Training from './pages/calculators/Training';
+import Meowficer from './pages/calculators/Meowficer';
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import AzurLaneCalculator, { AzurLaneContext } from './lib/azurlane'
 import styled from 'styled-components';
@@ -29,6 +30,7 @@ const App: React.FC = () => {
           <Route path="/" exact component={Index} />
           <Route path="/menu" component={Menu} />
           <Route path="/calc/training" component={Training} />
+          <Route path="/calc/meowficer" component={Meowficer} />
         </AzurLaneContext.Provider>
       </div>
     </Router>

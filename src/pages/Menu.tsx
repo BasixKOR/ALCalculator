@@ -7,6 +7,7 @@ const MenuItem = styled(Link)`
   width: 100%;
   background-color: dodgerblue;
   padding: .3em;
+  margin-bottom: .3em;
   font-size: 1.3em;
   color: white;
   text-decoration: none;
