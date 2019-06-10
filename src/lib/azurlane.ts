@@ -3,7 +3,7 @@ import React from "react";
 export enum Server { EN = 'EN', JP = 'JP', KR = 'KR', CN = 'CN' }
 
 export default class AzurLaneCalculator {
-  constructor(public level: number, public server: Server = Server.EN) {
+  constructor(public level: number, public server?: Server) {
   }
 
   private calculateModifier(ships: ShipsCount): Modifier {
