@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Index from './pages/Index'
 import Menu from './pages/Menu'
+import Training from './pages/calculators/Training';
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import AzurLaneCalculator, { AzurLaneContext } from './lib/azurlane'
 import styled from 'styled-components';
-import Training from './components/calculators/Training';
 
 const Header = styled.header`
   background-color: #282c34;
