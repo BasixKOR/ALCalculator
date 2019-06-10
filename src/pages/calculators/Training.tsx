@@ -2,8 +2,9 @@ import React, { useContext, useState } from "react";
 import { AzurLaneContext, isShipsCount } from "../../lib/azurlane";
 import AkashiLayout from "../../components/AkashiLayout";
 import CalcButton from "../../components/CalcButton";
+import { RouteChildrenProps } from "react-router";
 
-const Training: React.FC = props => {
+const Training: React.FC<RouteChildrenProps> = props => {
   const azurlane = useContext(AzurLaneContext)
   const [comfort, setComfort] = useState(NaN)
   const [buff, setBuff] = useState(NaN)
@@ -26,7 +27,7 @@ const Training: React.FC = props => {
       <label>Is the supplies enough?</label>
     </div>
     <h1>{result} EXP/hour</h1>
-    <CalcButton onClick={onClick} />
+    <CalcButton onClick={onClick} {...props} />
   </AkashiLayout>
 }
 
