@@ -6,7 +6,7 @@ interface ALRouteInterface {
   component: React.ComponentType
 }
 
-const ALRoute: React.FC<ALRouteInterface> = props => {
+const ALRoute: React.FC<ALRouteInterface> = ({ component }) => {
   const azurlane = useContext(AzurLaneContext)
 
   return <Route render={ _ =>
@@ -18,7 +18,7 @@ const ALRoute: React.FC<ALRouteInterface> = props => {
       }} />
     ) : 
     (
-      <props.component {..._} />
+      <component {..._} />
     )
   } />
 }
