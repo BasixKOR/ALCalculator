@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AzurLaneContext, isShipsCount } from "../../lib/azurlane";
-import AkashiLayout from "../AkashiLayout";
-import CalcButton from "../CalcButton";
+import AkashiLayout from "../../components/AkashiLayout";
+import CalcButton from "../../components/CalcButton";
 
 const Training: React.FC = props => {
   const azurlane = useContext(AzurLaneContext)

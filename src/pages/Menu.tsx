@@ -15,6 +15,7 @@ const MenuItem = styled(Link)`
 const Menu: React.FC = props => {
   return <AkashiLayout>
     <MenuItem to="/calc/training">Training EXP</MenuItem>
+    <MenuItem to="/calc/meowficer">Meowficer EXP</MenuItem>
   </AkashiLayout>
 }
 
