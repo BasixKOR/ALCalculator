@@ -14,7 +14,7 @@ const ALRoute: React.FC<ALRouteInterface> = props => {
     (
       <Redirect
         to={{
-          pathname: "/login",
+          pathname: "/",
           state: { from: props.location }
         }}
       />
