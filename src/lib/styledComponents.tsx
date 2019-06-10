@@ -27,3 +27,13 @@ font-size: 1.3em;
 color: white;
 text-decoration: none;
 `
+
+export const StyledButton = styled.button`
+width: 100%;
+background-color: ${({ color }) => color || 'dodgerblue'};
+padding: .3em;
+font-size: 1.3em;
+color: white;
+text-decoration: none;
+border: none;
+`
