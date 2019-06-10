@@ -9,7 +9,7 @@ export const SubmitLink = styled(StyledLink)`
   margin-top: auto;
 `
 
-const Index: React.FC = props => {
+const Index: React.FC = () => {
   const azurlane = useContext(AzurLaneContext)
   const [level, setLevel] = useState(NaN)
   const [server, setServer] = useState<Server>(Server.EN)
