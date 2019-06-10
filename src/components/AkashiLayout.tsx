@@ -1,10 +1,9 @@
 import React from 'react';
-import akashi from '../res/akashi.png'
 import { Flex } from '../lib/styledComponents';
 
 const AkashiLayout: React.FC = ({ children }) => (
   <Flex>
-    <img src={akashi} alt="Akashi"/>
+    <img src="/akashi.png" alt="Akashi"/>
     <div className="content">
       {children}
     </div>
